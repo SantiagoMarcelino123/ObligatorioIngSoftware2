@@ -12,10 +12,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- *
  * @author alumnoFI
  */
-public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Observer{
+public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Observer {
 
     private boolean volumen;
     private ComunicacionPaneles comunicacion;
@@ -29,7 +28,6 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
     }
 
     /**
-     *
      * @param cp
      */
     public MenuConfiguracionPasajero(ComunicacionPaneles cp) {
@@ -87,32 +85,32 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblConfig))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(179, 179, 179)
-                        .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(lblIdioma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(lblConfig))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(119, 119, 119)
+                                                .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(179, 179, 179)
+                                                .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblIdioma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblConfig)
-                .addGap(54, 54, 54)
-                .addComponent(lblIdioma)
-                .addGap(197, 197, 197)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(114, 114, 114))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblConfig)
+                                .addGap(54, 54, 54)
+                                .addComponent(lblIdioma)
+                                .addGap(197, 197, 197)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(114, 114, 114))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -139,7 +137,7 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
 
     @Override
     public void update(Observable o, Object o1) {
-            lblConfig.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getConfiguracion());
-            lblIdioma.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getSeleccioneLenguaje());
+        lblConfig.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getConfiguracion());
+        lblIdioma.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getSeleccioneLenguaje());
     }
 }

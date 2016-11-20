@@ -29,7 +29,7 @@ public final class Espaniol extends Idioma {
         orgulloYPrejuicio = "Orgullo y prejucio";
         elPrincipito = "El principito";
 
-        tiempoRestantre = "Tiempo restante";
+        tiempoRestantre = "Tiempo restante: ";
         localizacion = "Localización";
 
         seleccionarIdioma = "Seleccionar idioma";
@@ -37,5 +37,14 @@ public final class Espaniol extends Idioma {
 
         configuracion = "Configuración";
         seleccioneLenguaje = "Seleccione lenguaje";
+
+        desde = "Desde: ";
+        hacia = "Hacia: ";
+        a = "a";
+        pedidoRealizado = "Pedido realizado";
+
+        comidas= "Comidas";
+        bebidas = "Bebidas";
+        otros= "Otros";
     }
 }

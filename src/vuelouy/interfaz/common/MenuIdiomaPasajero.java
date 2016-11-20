@@ -6,14 +6,15 @@
 
 package vuelouy.interfaz.common;
 
+import vuelouy.idiomas.ManejadorDeLenguajes;
+
 import java.util.Observable;
 import java.util.Observer;
 
 /**
- *
  * @author alumnoFI
  */
-public class MenuIdiomaPasajero extends javax.swing.JPanel implements Observer{
+public class MenuIdiomaPasajero extends javax.swing.JPanel implements Observer {
 
     /**
      * Creates new form MenuIdiomaPasajero2
@@ -26,9 +27,8 @@ public class MenuIdiomaPasajero extends javax.swing.JPanel implements Observer{
     public MenuIdiomaPasajero() {
         initComponents();
     }
-    
+
     /**
-     *
      * @param com
      */
     public MenuIdiomaPasajero(ComunicacionPaneles com) {
@@ -80,48 +80,49 @@ public class MenuIdiomaPasajero extends javax.swing.JPanel implements Observer{
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, 179)
-                .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(lblIdioma, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
-                    .addContainerGap()))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(119, 119, 119)
+                                .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(179, 179, 179)
+                                .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(99, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(lblIdioma, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+                                        .addContainerGap()))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(312, 312, 312)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(164, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(90, 90, 90)
-                    .addComponent(lblIdioma)
-                    .addContainerGap(457, Short.MAX_VALUE)))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(312, 312, 312)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(164, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(90, 90, 90)
+                                        .addComponent(lblIdioma)
+                                        .addContainerGap(457, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngActionPerformed
-        comunicacion.setBPanel(false);
-        comunicacion.setBIdioma(true);
+        setIdiomaYPanel();
         comunicacion.cambio("ingles");
     }//GEN-LAST:event_btnIngActionPerformed
 
     private void btnEspaniolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspaniolActionPerformed
-        comunicacion.setBIdioma(true);
-        comunicacion.setBPanel(false);
+        setIdiomaYPanel();
         comunicacion.cambio("español");
     }//GEN-LAST:event_btnEspaniolActionPerformed
 
-
+    private void setIdiomaYPanel(){
+        comunicacion.setBIdioma(true);
+        comunicacion.setBPanel(false);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEspaniol;
     private javax.swing.JButton btnIng;
@@ -130,13 +131,7 @@ public class MenuIdiomaPasajero extends javax.swing.JPanel implements Observer{
 
     @Override
     public void update(Observable o, Object o1) {
-        if(comunicacion.getIdioma().equals("español")){
-            lblIdioma.setText("Seleccione Idioma");
-        }
-        
-        if(comunicacion.getIdioma().equals("español")){
-            lblIdioma.setText("Select Language");
-        }
+        lblIdioma.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getSeleccionarIdioma());
     }
 
 }

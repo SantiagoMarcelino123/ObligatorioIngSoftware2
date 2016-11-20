@@ -37,6 +37,27 @@ public abstract class Idioma {
     protected String configuracion;
     protected String seleccioneLenguaje;
 
+    protected String desde;
+    protected String hacia;
+    protected String a;
+    protected String pedidoRealizado;
+
+    protected String comidas;
+    protected String bebidas;
+    protected String otros;
+
+    public String getComidas() {
+        return comidas;
+    }
+
+    public String getBebidas() {
+        return bebidas;
+    }
+
+    public String getOtros() {
+        return otros;
+    }
+
     public String getCamaras() {
         return camaras;
     }
@@ -139,5 +160,21 @@ public abstract class Idioma {
 
     public String getSeleccioneLenguaje() {
         return seleccioneLenguaje;
+    }
+
+    public String getDesde() {
+        return desde;
+    }
+
+    public String getHacia() {
+        return hacia;
+    }
+
+    public String getA() {
+        return a;
+    }
+
+    public String getPedidoRealizado() {
+        return pedidoRealizado;
     }
 }

@@ -27,10 +27,16 @@ public final class ManejadorDeLenguajes {
             case "español":
                 miManejador.idiomaActual = new Espaniol();
                 break;
+            case "ingles":
+                miManejador.idiomaActual = new Ingles();
+                break;
+            case "italiano":
+                miManejador.idiomaActual = new Italiano();
+                break;
         }
     }
 
-    public Idioma getIdiomaActual(){
+    public Idioma getIdiomaActual() {
         return miManejador.idiomaActual;
     }
 }
