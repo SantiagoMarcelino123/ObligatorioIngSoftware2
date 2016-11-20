@@ -6,6 +6,8 @@
 
 package vuelouy.interfaz.common;
 
+import vuelouy.idiomas.ManejadorDeLenguajes;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,7 +27,7 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         initComponents();
         volumen = true;
     }
-    
+
     /**
      *
      * @param cp
@@ -36,7 +38,7 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         initComponents();
         volumen = true;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -120,7 +122,7 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         comunicacion.cambio("español");
     }//GEN-LAST:event_btnEspaniolActionPerformed
 
-    
+
     private void btnIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngActionPerformed
         comunicacion.setBPanel(false);
         comunicacion.setBIdioma(true);
@@ -137,15 +139,7 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
 
     @Override
     public void update(Observable o, Object o1) {
-        
-        if(comunicacion.getIdioma().equals("español")){
-            lblConfig.setText("Configuración");
-            lblIdioma.setText("Seleccione Lenguaje");
-        }
-        
-        if(comunicacion.getIdioma().equals("ingles")){
-            lblIdioma.setText("Select Language");
-            lblConfig.setText("Settings");
-        }
+            lblConfig.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getConfiguracion());
+            lblIdioma.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getSeleccioneLenguaje());
     }
 }
