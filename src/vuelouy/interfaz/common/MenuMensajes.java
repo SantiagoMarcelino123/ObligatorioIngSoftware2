@@ -176,7 +176,7 @@ public class MenuMensajes extends javax.swing.JPanel implements Observer{
 
     private void btnArribandoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArribandoActionPerformed
         comunicacion.setbMensaje(true);
-        comunicacion.cambio("Arribar");
+        comunicacion.cambio("Arribando");
     }//GEN-LAST:event_btnArribandoActionPerformed
 
     private void btnTurbulenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTurbulenciaActionPerformed

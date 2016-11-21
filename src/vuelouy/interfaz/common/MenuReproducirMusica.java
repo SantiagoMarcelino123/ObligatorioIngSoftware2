@@ -8,10 +8,18 @@ package vuelouy.interfaz.common;
 import vuelouy.dominio.Musica;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Set;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
+import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 import javax.swing.Timer;
 
 /**
@@ -43,8 +51,23 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
         slVolumen.setValue(100);
         lblVolumen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/Rvol4.png")));
         musica = new Musica();
+        lstCanciones.setModel(getModelList());
+        lstCanciones.setSelectedIndex(0);
     }
 
+    private DefaultListModel<String> getModelList(){
+        DefaultListModel<String> model = new DefaultListModel<>();
+        Set<String> s = new LinkedHashSet<>(musica.getListaMusicas());
+        Iterator<String> it = s.iterator();
+        int position = 0;
+        while (it.hasNext()){
+            it.next();
+            String nombre = musica.getListaMusicas().get(position).substring(17);
+            model.addElement(nombre);
+            position++;
+        }
+        return model;  
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,6 +87,7 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
         jScrollPane1 = new javax.swing.JScrollPane();
         lstCanciones = new javax.swing.JList();
         btnVolver = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
 
         setEnabled(false);
 
@@ -125,7 +149,7 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
                 .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSig, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -146,7 +170,7 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
                     .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSig, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAnt, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
+                .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(slVolumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,13 +180,7 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
         );
 
         lstCanciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lstCanciones.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Llora mi garganta", "Titanium", "Gangnam Style" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         lstCanciones.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        lstCanciones.setSelectedIndex(0);
         jScrollPane1.setViewportView(lstCanciones);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/Volver.png"))); // NOI18N
@@ -174,6 +192,14 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
+            }
+        });
+
+        btnAgregar.setText("Agregar");
+        btnAgregar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
             }
         });
 
@@ -192,14 +218,18 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
             .addGroup(layout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAgregar)
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addContainerGap(111, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(25, 25, 25)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,7 +292,7 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
         }
         musica.anterior();
         if (lstCanciones.getSelectedIndex() == 0) {
-            lstCanciones.setSelectedIndex(2);
+            lstCanciones.setSelectedIndex(lstCanciones.getModel().getSize()-1);
         } else {
             lstCanciones.setSelectedIndex(lstCanciones.getSelectedIndex()- 1);
         }
@@ -281,15 +311,40 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
         timepo = 0;
         }
         musica.siguiente();
-        if (lstCanciones.getSelectedIndex() == 2) {
+        if (lstCanciones.getSelectedIndex() == lstCanciones.getModel().getSize()-1) {
             lstCanciones.setSelectedIndex(0);
         } else {
             lstCanciones.setSelectedIndex(lstCanciones.getSelectedIndex() + 1);
         }
     }//GEN-LAST:event_btnSigActionPerformed
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+            JFileChooser file=new JFileChooser();
+            file.showSaveDialog(this);
+            File archivo =file.getSelectedFile();
+            if (archivo != null) {
+            Path origenPath = FileSystems.getDefault().getPath(archivo.getParent());
+            Path destinoPath = FileSystems.getDefault().getPath("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\VueloUY\\src\\vuelouy\\sonidos\\");
+            File f;
+            try{      
+                f = new File(origenPath + "//" + archivo.getName());
+                if(f.renameTo(new File(destinoPath + "//" + archivo.getName())))
+                {
+                    lstCanciones.setModel(this.getModelList());
+                    lstCanciones.setSelectedIndex(0);
+                }
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace(System.out);
+            }
+        }
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnAnt;
     private javax.swing.JButton btnPlay;
     private javax.swing.JButton btnSig;
@@ -307,6 +362,7 @@ public class MenuReproducirMusica extends javax.swing.JPanel implements Observer
         if (comunicacion.getBPanel()) {
             this.setVisible(false);
             comunicacion.getVentanaInicioP().mostrarSubMenu(comunicacion.getPanel());
+            
         }
     }
     private static final Logger LOG = getLogger(MenuReproducirMusica.class.getName());
