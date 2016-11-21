@@ -5,11 +5,12 @@
  */
 package vuelouy.interfaz.common;
 
+import vuelouy.idiomas.ManejadorDeLenguajes;
+
 import java.util.Observable;
 import java.util.Observer;
 
 /**
- *
  * @author Usuario
  */
 public class MenuCamarasExternas extends javax.swing.JPanel implements Observer {
@@ -27,7 +28,6 @@ public class MenuCamarasExternas extends javax.swing.JPanel implements Observer 
     }
 
     /**
-     *
      * @param p
      */
     public MenuCamarasExternas(ComunicacionPaneles p) {
@@ -70,30 +70,30 @@ public class MenuCamarasExternas extends javax.swing.JPanel implements Observer 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblCamaraExterna)))
-                .addContainerGap(136, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(130, 130, 130)
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(lblCamaraExterna)))
+                                .addContainerGap(136, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblCamaraExterna)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(93, 93, 93)
-                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblCamaraExterna)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addGap(93, 93, 93)
+                                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -116,14 +116,7 @@ public class MenuCamarasExternas extends javax.swing.JPanel implements Observer 
             comunicacion.getVentanaInicioP().mostrarSubMenu(comunicacion.getPanel());
             comunicacion.setBPanel(false);
         }
-        
-        if(comunicacion.getIdioma().equals("español")){
-            lblCamaraExterna.setText("Cámara Externa");
-        }
-        
-        if(comunicacion.getIdioma().equals("ingles")){
-            lblCamaraExterna.setText("Outside Camera");
-        }
 
+        lblCamaraExterna.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getCamaraExterna());
     }
 }

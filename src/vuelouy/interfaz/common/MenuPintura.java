@@ -195,23 +195,24 @@ public class MenuPintura extends javax.swing.JPanel implements Observer{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAzulActionPerformed
-        panelPaint.setColorActual(Color.GREEN);
+        panelPaint.setColorActual(Color.BLUE);
     }//GEN-LAST:event_btnAzulActionPerformed
 
     private void btnRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRojoActionPerformed
-        panelPaint.setColorActual(Color.PINK);
+        panelPaint.setColorActual(Color.RED);
     }//GEN-LAST:event_btnRojoActionPerformed
 
     private void btnAmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAmarilloActionPerformed
-        panelPaint.setColorActual(Color.ORANGE);
+        panelPaint.setColorActual(Color.YELLOW);
     }//GEN-LAST:event_btnAmarilloActionPerformed
 
     private void btnNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNegroActionPerformed
-        panelPaint.setColorActual(Color.GRAY);
+        panelPaint.setColorActual(Color.BLACK);
     }//GEN-LAST:event_btnNegroActionPerformed
 
     private void btnVolver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver2ActionPerformed
-       
+        comunicacion.setBPanel(true);
+        comunicacion.cambio("Entretenimiento");       
     }//GEN-LAST:event_btnVolver2ActionPerformed
 
 

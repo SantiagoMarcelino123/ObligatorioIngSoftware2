@@ -6,16 +6,19 @@
 package vuelouy.interfaz.common;
 
 import vuelouy.dominio.Viaje;
+import vuelouy.idiomas.ManejadorDeLenguajes;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
+
 import static java.util.Calendar.getInstance;
+
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.Timer;
 
 /**
- *
  * @author Pablo
  */
 public class MenuLocalizacion extends javax.swing.JPanel implements Observer, ActionListener {
@@ -60,75 +63,75 @@ public class MenuLocalizacion extends javax.swing.JPanel implements Observer, Ac
         lblLocalizacion = new javax.swing.JLabel();
 
         lblRestante.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        lblRestante.setText("Tiempo Restante de Vuelo:");
+        lblRestante.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getTiempoRestantre());
 
         lblTiempoRestante.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         lblTiempoRestante.setText("Hora");
 
         lblHacia.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        lblHacia.setText("Hacia:");
+        lblHacia.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getHacia());
 
         lblDesde.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        lblDesde.setText("Desde: ");
+        lblDesde.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getDesde());
 
         lblOrigen.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        lblOrigen.setText("a");
+        lblOrigen.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getA());
 
         lblDestino.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        lblDestino.setText("a");
+        lblDestino.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getA());
 
         lblLocalizacion.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        lblLocalizacion.setText("Localización");
+        lblLocalizacion.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getLocalizacion());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblLocalizacion)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblHacia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblDesde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblOrigen)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
-                                .addComponent(lblRestante)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblTiempoRestante))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(lblDestino)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18))))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(lblLocalizacion)
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                        .addComponent(lblHacia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(lblDesde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(lblOrigen)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                                                                .addComponent(lblRestante)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(lblTiempoRestante))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(7, 7, 7)
+                                                                .addComponent(lblDestino)
+                                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                                .addGap(18, 18, 18))))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLocalizacion)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDesde)
-                            .addComponent(lblOrigen)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblRestante)
-                            .addComponent(lblTiempoRestante))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHacia)
-                    .addComponent(lblDestino))
-                .addContainerGap(417, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblLocalizacion)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(49, 49, 49)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(lblDesde)
+                                                        .addComponent(lblOrigen)))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(35, 35, 35)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(lblRestante)
+                                                        .addComponent(lblTiempoRestante))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(lblHacia)
+                                        .addComponent(lblDestino))
+                                .addContainerGap(417, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -150,18 +153,12 @@ public class MenuLocalizacion extends javax.swing.JPanel implements Observer, Ac
             comunicacion.getVentanaInicioP().mostrarSubMenu(comunicacion.getPanel());
             comunicacion.setBPanel(false);
         }
-        if (comunicacion.getIdioma().equals("español")) {
-            lblDesde.setText("Desde: ");
-            lblHacia.setText("Hacia: ");
-            lblRestante.setText("Tiempo Restante de Vuelo: ");
-            lblLocalizacion.setText("Localización");
-        }
-        if (comunicacion.getIdioma().equals("ingles")) {
-            lblDesde.setText("From: ");
-            lblHacia.setText("To: ");
-            lblRestante.setText("Remaining Flying Time: ");
-            lblLocalizacion.setText("Location");
-        }
+
+        lblDesde.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getDesde());
+        lblHacia.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getHacia());
+        lblRestante.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getTiempoRestantre());
+        lblLocalizacion.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getLocalizacion());
+
         lblOrigen.setText(viaje.getOrigen());
         lblDestino.setText(viaje.getDestino());
     }
@@ -169,7 +166,7 @@ public class MenuLocalizacion extends javax.swing.JPanel implements Observer, Ac
     public void comenzarReloj() {
         timer = new Timer(1000, this);
         timer.start();
-        
+
         lblTiempoRestante.setText(viaje.lapsoRestanteViaje());
     }
 

@@ -6,14 +6,15 @@
 
 package vuelouy.interfaz.common;
 
+import vuelouy.idiomas.ManejadorDeLenguajes;
+
 import java.util.Observable;
 import java.util.Observer;
 
 /**
- *
  * @author alumnoFI
  */
-public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Observer{
+public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Observer {
 
     private boolean volumen;
     private ComunicacionPaneles comunicacion;
@@ -25,9 +26,8 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         initComponents();
         volumen = true;
     }
-    
+
     /**
-     *
      * @param cp
      */
     public MenuConfiguracionPasajero(ComunicacionPaneles cp) {
@@ -36,7 +36,7 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         initComponents();
         volumen = true;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,6 +50,9 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         btnIng = new javax.swing.JButton();
         lblConfig = new javax.swing.JLabel();
         lblIdioma = new javax.swing.JLabel();
+        btnItaliano = new javax.swing.JButton();
+        btnFrances = new javax.swing.JButton();
+        btnFrances1 = new javax.swing.JButton();
 
         btnEspaniol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/IdiomaEsp.png"))); // NOI18N
         btnEspaniol.setBorder(null);
@@ -82,22 +85,62 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         lblIdioma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIdioma.setText("Seleccione Idioma");
 
+        btnItaliano.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/ItaliaBanderaIcono.png"))); // NOI18N
+        btnItaliano.setBorder(null);
+        btnItaliano.setBorderPainted(false);
+        btnItaliano.setContentAreaFilled(false);
+        btnItaliano.setPreferredSize(new java.awt.Dimension(96, 96));
+        btnItaliano.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnItalianoActionPerformed(evt);
+            }
+        });
+
+        btnFrances.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/IdiomaFra.png"))); // NOI18N
+        btnFrances.setBorder(null);
+        btnFrances.setBorderPainted(false);
+        btnFrances.setContentAreaFilled(false);
+        btnFrances.setPreferredSize(new java.awt.Dimension(96, 96));
+        btnFrances.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFrancesActionPerformed(evt);
+            }
+        });
+
+        btnFrances1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/boton aleman.jpg"))); // NOI18N
+        btnFrances1.setBorder(null);
+        btnFrances1.setBorderPainted(false);
+        btnFrances1.setContentAreaFilled(false);
+        btnFrances1.setPreferredSize(new java.awt.Dimension(96, 96));
+        btnFrances1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFrances1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblIdioma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblConfig))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(179, 179, 179)
-                        .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(lblIdioma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(67, 67, 67)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnItaliano, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(87, 87, 87)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnFrances1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnFrances, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,47 +148,70 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
                 .addContainerGap()
                 .addComponent(lblConfig)
                 .addGap(54, 54, 54)
-                .addComponent(lblIdioma)
-                .addGap(197, 197, 197)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(114, 114, 114))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblIdioma)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnFrances, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addComponent(btnItaliano, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnFrances1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEspaniolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspaniolActionPerformed
-        comunicacion.setBIdioma(true);
-        comunicacion.setBPanel(false);
+        setPanelEIdioma();
         comunicacion.cambio("español");
     }//GEN-LAST:event_btnEspaniolActionPerformed
 
-    
+
     private void btnIngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngActionPerformed
-        comunicacion.setBPanel(false);
-        comunicacion.setBIdioma(true);
+     setPanelEIdioma();
         comunicacion.cambio("ingles");
     }//GEN-LAST:event_btnIngActionPerformed
 
+    private void btnItalianoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItalianoActionPerformed
+        // TODO add your handling code here:
+      setPanelEIdioma();
+        comunicacion.cambio("italiano");
+    }//GEN-LAST:event_btnItalianoActionPerformed
+
+    private void btnFrancesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFrancesActionPerformed
+        // TODO add your handling code here:
+          setPanelEIdioma();
+        comunicacion.cambio("frances");
+    }//GEN-LAST:event_btnFrancesActionPerformed
+
+    private void btnFrances1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFrances1ActionPerformed
+        // TODO add your handling code here:
+             setPanelEIdioma();
+        comunicacion.cambio("aleman");
+    }//GEN-LAST:event_btnFrances1ActionPerformed
+    
+    private void setPanelEIdioma(){
+        comunicacion.setBPanel(false);
+        comunicacion.setBIdioma(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEspaniol;
+    private javax.swing.JButton btnFrances;
+    private javax.swing.JButton btnFrances1;
     private javax.swing.JButton btnIng;
+    private javax.swing.JButton btnItaliano;
     private javax.swing.JLabel lblConfig;
     private javax.swing.JLabel lblIdioma;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void update(Observable o, Object o1) {
-        
-        if(comunicacion.getIdioma().equals("español")){
-            lblConfig.setText("Configuración");
-            lblIdioma.setText("Seleccione Lenguaje");
-        }
-        
-        if(comunicacion.getIdioma().equals("ingles")){
-            lblIdioma.setText("Select Language");
-            lblConfig.setText("Settings");
-        }
+        lblConfig.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getConfiguracion());
+        lblIdioma.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getSeleccioneLenguaje());
     }
 }

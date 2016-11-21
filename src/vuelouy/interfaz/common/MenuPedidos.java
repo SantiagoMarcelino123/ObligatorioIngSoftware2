@@ -7,15 +7,15 @@ package vuelouy.interfaz.common;
 
 import vuelouy.dominio.Pedido;
 import vuelouy.dominio.Viaje;
-import java.awt.Font;
+import vuelouy.idiomas.ManejadorDeLenguajes;
+
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JOptionPane;
+
 import static javax.swing.JOptionPane.showMessageDialog;
-import javax.swing.border.TitledBorder;
 
 /**
- *
  * @author Usuario
  */
 public class MenuPedidos extends javax.swing.JPanel implements Observer {
@@ -34,7 +34,6 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
     }
 
     /**
-     *
      * @param p
      */
     public MenuPedidos(ComunicacionPaneles p, Viaje v) {
@@ -141,27 +140,27 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
         javax.swing.GroupLayout panelBebidaLayout = new javax.swing.GroupLayout(panelBebida);
         panelBebida.setLayout(panelBebidaLayout);
         panelBebidaLayout.setHorizontalGroup(
-            panelBebidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBebidaLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(panelBebidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnWhisky, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCafe, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRefresco, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
+                panelBebidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelBebidaLayout.createSequentialGroup()
+                                .addGap(0, 0, 0)
+                                .addGroup(panelBebidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnWhisky, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnCafe, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnRefresco, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, 0))
         );
         panelBebidaLayout.setVerticalGroup(
-            panelBebidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBebidaLayout.createSequentialGroup()
-                .addComponent(btnWhisky, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCafe, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnRefresco, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                panelBebidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBebidaLayout.createSequentialGroup()
+                                .addComponent(btnWhisky, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(btnAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(btnCafe, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(btnRefresco, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0))
         );
 
         panelComida.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "  Comida  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
@@ -229,30 +228,30 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
         javax.swing.GroupLayout panelComidaLayout = new javax.swing.GroupLayout(panelComida);
         panelComida.setLayout(panelComidaLayout);
         panelComidaLayout.setHorizontalGroup(
-            panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelComidaLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnMerienda, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCena, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(btnAlmuerzo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnDesayuno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
+                panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelComidaLayout.createSequentialGroup()
+                                .addGap(0, 0, 0)
+                                .addGroup(panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(btnMerienda, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(btnCena, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(btnAlmuerzo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btnDesayuno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, 0))
         );
         panelComidaLayout.setVerticalGroup(
-            panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelComidaLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(btnDesayuno, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnAlmuerzo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCena, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnMerienda, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                panelComidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelComidaLayout.createSequentialGroup()
+                                .addGap(0, 0, 0)
+                                .addComponent(btnDesayuno, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(btnAlmuerzo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(btnCena, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(btnMerienda, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0))
         );
 
         panelOtros.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "  Otros  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
@@ -321,144 +320,104 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
         javax.swing.GroupLayout panelOtrosLayout = new javax.swing.GroupLayout(panelOtros);
         panelOtros.setLayout(panelOtrosLayout);
         panelOtrosLayout.setHorizontalGroup(
-            panelOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelOtrosLayout.createSequentialGroup()
-                .addGroup(panelOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAuriculares, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAlmohada, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnManta, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
+                panelOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelOtrosLayout.createSequentialGroup()
+                                .addGroup(panelOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnAuriculares, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnAlmohada, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnManta, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, 0))
         );
         panelOtrosLayout.setVerticalGroup(
-            panelOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelOtrosLayout.createSequentialGroup()
-                .addComponent(btnAlmohada, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnManta, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnAuriculares, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                panelOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelOtrosLayout.createSequentialGroup()
+                                .addComponent(btnAlmohada, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(btnManta, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(btnAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(btnAuriculares, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblPedidos)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(149, 149, 149)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panelComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelOtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(panelBebida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(120, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblPedidos)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(149, 149, 149)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(panelComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(panelOtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(panelBebida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblPedidos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(panelBebida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(panelOtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblPedidos)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(panelComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(panelBebida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(panelOtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(36, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRefrescoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefrescoActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Cafe"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnRefrescoActionPerformed
+     realizarAccion("Refresco");  }//GEN-LAST:event_btnRefrescoActionPerformed
 
     private void btnCafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCafeActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Cafe"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnCafeActionPerformed
+       realizarAccion("Cafe");  }//GEN-LAST:event_btnCafeActionPerformed
 
     private void btnAguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAguaActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Agua Mineral"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnAguaActionPerformed
+      realizarAccion("Agua Mineral");  }//GEN-LAST:event_btnAguaActionPerformed
 
     private void btnWhiskyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWhiskyActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Whisky"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnWhiskyActionPerformed
+    realizarAccion("Whisky"); }//GEN-LAST:event_btnWhiskyActionPerformed
 
     private void btnCenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCenaActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Cena"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnCenaActionPerformed
+   realizarAccion("Cena");   }//GEN-LAST:event_btnCenaActionPerformed
 
     private void btnMeriendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeriendaActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Merienda"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnMeriendaActionPerformed
+    realizarAccion("Merienda"); }//GEN-LAST:event_btnMeriendaActionPerformed
 
     private void btnDesayunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesayunoActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Desayuno"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnDesayunoActionPerformed
+      realizarAccion("Desayuno"); }//GEN-LAST:event_btnDesayunoActionPerformed
 
     private void btnAlmuerzoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlmuerzoActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Almuerzo"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnAlmuerzoActionPerformed
+       realizarAccion("Almuerzo"); }//GEN-LAST:event_btnAlmuerzoActionPerformed
 
     private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Ayuda"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnAyudaActionPerformed
+  realizarAccion("Ayuda");  }//GEN-LAST:event_btnAyudaActionPerformed
 
     private void btnAlmohadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlmohadaActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Almohada"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnAlmohadaActionPerformed
+      realizarAccion("Almohada");   }//GEN-LAST:event_btnAlmohadaActionPerformed
 
     private void btnAuricularesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAuricularesActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Auriculares"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+      realizarAccion("Auriculares");
     }//GEN-LAST:event_btnAuricularesActionPerformed
 
     private void btnMantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantaActionPerformed
-        viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Manta"));
-        comunicacion.setBPanel(true);
-        comunicacion.cambio(" ");
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+      realizarAccion("Manta");
     }//GEN-LAST:event_btnMantaActionPerformed
 
+    private void realizarAccion(String tipoPedido){
+        viaje.agregarPedido(new Pedido(viaje.getAsiento(), tipoPedido));
+        comunicacion.setBPanel(true);
+        comunicacion.cambio(" ");
+        showMessageDialog(this, ManejadorDeLenguajes.getInstancia().getIdiomaActual().getPedidoRealizado(), "", JOptionPane.INFORMATION_MESSAGE);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgua;
@@ -486,47 +445,22 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
             comunicacion.getVentanaInicioP().mostrarSubMenu(comunicacion.getPanel());
         }
 
-        if (comunicacion.getIdioma().equals("ingles")) {
-            panelBebida.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "  Drinks  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)));
-            panelComida.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "  Foods  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)));
-            panelOtros.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "  Others  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)));
-            lblPedidos.setText("Requests");
-            btnAlmohada.setText("Pillow");
-            btnAuriculares.setText("Earphones");
-            btnAyuda.setText("Assistance");
-            btnManta.setText("Blanket");
-            btnAlmuerzo.setText("Lunch");
-            btnCena.setText("Dinner");
-            btnDesayuno.setText("Breakfast");
-            btnMerienda.setText("Snack");
-            btnWhisky.setText("Whisky");
-            btnAgua.setText("Water");
-            btnCafe.setText("Coffee");
-            btnRefresco.setText("Soda");
-            comunicacion.setBIdioma(false);
-
-        }
-
-        if (comunicacion.getIdioma().equals("español")) {
-            panelBebida.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "  Bebidas  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)));
-            panelComida.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "  Comidas  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)));
-            panelOtros.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "  Otros  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)));
-            lblPedidos.setText("Pedidos");
-            btnAlmohada.setText("Almohada");
-            btnAuriculares.setText("Auriculares");
-            btnAyuda.setText("Ayuda");
-            btnManta.setText("Manta");
-            btnAlmuerzo.setText("Almuerzo");
-            btnCena.setText("Cena");
-            btnDesayuno.setText("Desayuno");
-            btnMerienda.setText("Merienda");
-            btnWhisky.setText("Whisky");
-            btnAgua.setText("Agua Mineral");
-            btnCafe.setText("Cafe");
-            btnRefresco.setText("Refresco");
-            comunicacion.setBIdioma(false);
-
-        }
-
+        panelBebida.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "  " +ManejadorDeLenguajes.getInstancia().getIdiomaActual().getBebidas()+" ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)));
+        panelComida.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null,"  " +ManejadorDeLenguajes.getInstancia().getIdiomaActual().getComidas() +" ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)));
+        panelOtros.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "  " +ManejadorDeLenguajes.getInstancia().getIdiomaActual().getOtros()+" ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 12)));
+        lblPedidos.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getPedidos());
+        btnAlmohada.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getAlmohada());
+        btnAuriculares.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getAuriculares());
+        btnAyuda.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getAyuda());
+        btnManta.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getManta());
+        btnAlmuerzo.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getAlmuerzo());
+        btnCena.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getCena());
+        btnDesayuno.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getDesayuno());
+        btnMerienda.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getMerienda());
+        btnWhisky.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getWhisky());
+        btnAgua.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getAguaMineral());
+        btnCafe.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getCafe());
+        btnRefresco.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getRefresco());
+        comunicacion.setBIdioma(false);
     }
 }
