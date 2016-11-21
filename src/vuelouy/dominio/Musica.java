@@ -8,6 +8,8 @@ package vuelouy.dominio;
 
 import static java.applet.Applet.newAudioClip;
 import java.applet.AudioClip;
+import java.io.File;
+import java.util.ArrayList;
 
 /**
  * 
@@ -20,9 +22,7 @@ public class Musica {
     /**Bandera qeu indica si se esta reproduciendo una pista**/
     private boolean reproduciendo;
     /**Lista de rutas de las cacniones**/
-    private String[] listaMusicas = {"/vuelouy/sonidos/wav1.wav",
-                                     "/vuelouy/sonidos/wav2.wav",
-                                     "/vuelouy/sonidos/wav3.wav"};
+    private ArrayList<String> listaMusicas;
     /**Numero de pista que se sesta reproduciendo**/
     private int posActual;
     
@@ -30,18 +30,26 @@ public class Musica {
      * Constructor de la clase
      */
     public Musica() {
+        this.listaMusicas = new ArrayList<>(); 
         this.setReproduciendo(false);
-        this.setCancion(this.getListaMusicas()[0]);
         this.setPosActual(0);
+        this.setCancion(this.getListaMusicas().get(this.getPosActual()));
     }
 
     /**
      *
      * @return la lista de rutas de canciones.
      */
-    public String[] getListaMusicas() {
+    
+    public ArrayList<String> getListaMusicas() {
+        File dir = new File(getClass().getResource("/vuelouy/sonidos/").getFile());
+        File[] ficheros = dir.listFiles();
+        for (File fichero : ficheros) {
+            this.listaMusicas.add("/vuelouy/sonidos/"+fichero.getName());
+        }
         return listaMusicas;
     }
+    
 
     /**
      *
@@ -110,10 +118,14 @@ public class Musica {
         if (this.estaReproduciendo()) {
             parar();
         }
-
+        if (this.getPosActual() == this.getListaMusicas().size()-1){
+            this.setPosActual(0);
+            this.setCancion(this.getListaMusicas().get(this.getPosActual()));
+                
+        } else {
             this.setPosActual(this.getPosActual() + 1);
-            this.setCancion(this.getListaMusicas()[this.getPosActual()]);
-
+            this.setCancion(this.getListaMusicas().get(this.getPosActual()));   
+        }
     }
     
     /**
@@ -123,12 +135,13 @@ public class Musica {
         if (this.estaReproduciendo()) {
             parar();
         }
-        if ( (this.getPosActual() - 1) < 0){
-            this.setPosActual(this.getListaMusicas().length - 1);
-            this.setCancion(this.getListaMusicas()[this.getPosActual()]);
+        if (this.getPosActual() == 0){
+            this.setPosActual(this.getListaMusicas().size()-1);
+            this.setCancion(this.getListaMusicas().get(this.getPosActual()));
+                
         } else {
             this.setPosActual(this.getPosActual() - 1);
-            this.setCancion(this.getListaMusicas()[this.getPosActual()]);
+            this.setCancion(this.getListaMusicas().get(this.getPosActual()));   
         }
     }
     

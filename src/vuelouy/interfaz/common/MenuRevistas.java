@@ -168,11 +168,11 @@ public class MenuRevistas extends javax.swing.JPanel implements Observer {
 
     private void btnLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibroActionPerformed
         if (comunicacion.getIdioma().equals("ingles")) {
-            jepLectura.setText(textoHtml.getOrgYPreEspañol());
-
+            jepLectura.setText(textoHtml.getPrincipitoIngles());
+            
         }
         if (comunicacion.getIdioma().equals("español")) {
-            jepLectura.setText(textoHtml.getOrgYPreIngles());
+            jepLectura.setText(textoHtml.getPrincipitoEspañol());
         }
     }//GEN-LAST:event_btnLibroActionPerformed
 
