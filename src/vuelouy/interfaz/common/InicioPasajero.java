@@ -9,6 +9,7 @@ import vuelouy.dominio.Viaje;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
+import vuelouy.idiomas.ManejadorDeLenguajes;
 
 /**
  *
@@ -346,18 +347,10 @@ public class InicioPasajero extends javax.swing.JFrame implements Observer{
 
     @Override
     public void update(Observable o, Object arg) {
-        if (comunicacion.getIdioma().equals("ingles")) {
-            lblEntretenimiento.setText("Entertainment");
-            lblConfiguracion.setText("Settings");
-            lblLocalizacion.setText("Location");
-            lblPedidos.setText("Requests");
-        }
-        
-        if (comunicacion.getIdioma().equals("español")) {
-            lblEntretenimiento.setText("Entertainment");
-            lblConfiguracion.setText("Configuración");
-            lblLocalizacion.setText("Localización");
-            lblPedidos.setText("Pedidos");
-        }
+            lblEntretenimiento.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getEntretenimiento());
+            lblConfiguracion.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getConfiguracion());
+            lblLocalizacion.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getLocalizacion());
+            lblPedidos.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getPedidos());
+   
     }
 }

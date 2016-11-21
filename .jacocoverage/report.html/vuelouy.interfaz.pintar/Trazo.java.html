@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Trazo.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;VueloUY&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">vuelouy.interfaz.pintar</a> &gt; <span class="el_source">Trazo.java</span></div><h1>Trazo.java</h1><pre class="source lang-java linenums">package vuelouy.interfaz.pintar;
+
+/**
+ * Trazo que se dibuja en el paint.
+ */
+
+import java.awt.Color;
+import java.awt.geom.Point2D;
+import java.util.LinkedList;
+
+<span class="nc" id="L11">public class Trazo</span>
+{
+    /** Color del trazo */
+<span class="nc" id="L14">    private Color color = Color.black;</span>
+
+    /** Devuelve el color del trazo */
+    public Color getColor()
+    {
+<span class="nc" id="L19">        return color;</span>
+    }
+
+    /** Fija el color para el trazo */
+    public void setColor(Color color)
+    {
+<span class="nc" id="L25">        this.color = color;</span>
+<span class="nc" id="L26">    }</span>
+
+    /** Lista de puntos que compone el trazo */
+<span class="nc" id="L29">    private LinkedList&lt;Point2D&gt; puntos = new LinkedList&lt;Point2D&gt;();</span>
+
+    /** A�ade un nuevo punto al trazo */
+    public void addPunto(Point2D punto)
+    {
+<span class="nc" id="L34">        puntos.add(punto);</span>
+<span class="nc" id="L35">    }</span>
+
+    /** Devuelve la lista de puntos que compone el trazo */
+    public LinkedList&lt;Point2D&gt; getPuntos()
+    {
+<span class="nc" id="L40">        return puntos;</span>
+    }
+
+    /** Devuelve cu�ntos puntos componen el trazo */
+    public int getNumeroPuntos()
+    {
+<span class="nc" id="L46">        return puntos.size();</span>
+    }
+
+    /** A�ade un nuevo punto al trazo */
+    public void addPunto(int x, int y)
+    {
+<span class="nc" id="L52">        Point2D p = new Point2D.Float(x, y);</span>
+<span class="nc" id="L53">        puntos.add(p);</span>
+<span class="nc" id="L54">    }</span>
+
+    /** Devuelve el punto de la lista en la posici�n indicada
+     * 
+     * @param posicion en la lista, entre 0 y getNumeroPuntos()-1
+     * @return El punto
+     */
+    public Point2D getPunto(int posicion)
+    {
+<span class="nc" id="L63">        return puntos.get(posicion);</span>
+    }
+
+    public double dameDistanciaMinima(int x, int y)
+    {
+<span class="nc" id="L68">        double distancia = dameDistancia(x, y, 0);</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">        for (int i = 1; i &lt; puntos.size(); i++)</span>
+        {
+<span class="nc" id="L71">            distancia = Math.min(dameDistancia(x, y, i), distancia);</span>
+        }
+<span class="nc" id="L73">        return distancia;</span>
+    }
+
+    private double dameDistancia(int x, int y, int i)
+    {
+<span class="nc" id="L78">        return Math.abs(puntos.get(i).getX() - x)</span>
+<span class="nc" id="L79">                + Math.abs(puntos.get(i).getY() - y);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

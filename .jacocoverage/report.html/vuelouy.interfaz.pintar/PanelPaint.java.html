@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelPaint.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;VueloUY&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">vuelouy.interfaz.pintar</a> &gt; <span class="el_source">PanelPaint.java</span></div><h1>PanelPaint.java</h1><pre class="source lang-java linenums">package vuelouy.interfaz.pintar;
+
+/**
+ * Javier Abell�n, 24 Mayo 2006
+ * Panel de paint.
+ */
+
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.geom.Point2D;
+import java.util.LinkedList;
+
+/**
+ * Panel similar a un paintbrush de windows, que permite dibujar trazos 
+ * arrastrando el rat�n.
+ * @author Chuidiang.
+ *
+ */
+public class PanelPaint extends Canvas{
+    
+    /**
+     * serial uid
+     */
+    private static final long serialVersionUID = 3978706198935583032L;
+
+    /** Acci�n de pintar trazo mientrasa se arrastra el rat�n */
+<span class="nc" id="L28">    private PintaTrazo pintaTrazo = null;</span>
+
+    /** Clase suscriptora de los arrastres de rat�n */
+<span class="nc" id="L31">    private ListenerArrastre listener = null;</span>
+
+    /** Lista de trazos dibujados */
+<span class="nc" id="L34">    private LinkedList&lt;Trazo&gt; trazos = new LinkedList&lt;Trazo&gt;();</span>
+
+    /** Acci�n de mover un trazo cuando se le arrastra con el rat�n. */
+<span class="nc" id="L37">    private ArrastraTrazo arrastraTrazo = null;</span>
+
+    /** Indica si estamos en modo de arrastre de trazos o de dibujo de los 
+     * mismos.
+     */
+<span class="nc" id="L42">    private boolean modoArrastrar = false;</span>
+
+    /**
+     * Pone el modo de arrastre de trazos.
+     *
+     */
+    public void modoArrastrar()
+    {
+<span class="nc" id="L50">        listener.setAccion(arrastraTrazo);</span>
+<span class="nc" id="L51">        modoArrastrar = true;</span>
+<span class="nc" id="L52">    }</span>
+
+    /** 
+     * Pone el modo de dibujo de trazos.
+     *
+     */
+    public void modoPintar()
+    {
+<span class="nc" id="L60">        listener.setAccion(pintaTrazo);</span>
+<span class="nc" id="L61">        modoArrastrar = false;</span>
+<span class="nc" id="L62">    }</span>
+
+    /**
+     * Crea una intancia de esta clase, inicializando todo.
+     *
+     */
+    public PanelPaint()
+<span class="nc" id="L69">    {</span>
+<span class="nc" id="L70">        pintaTrazo = new PintaTrazo(trazos, this);</span>
+<span class="nc" id="L71">        listener = new ListenerArrastre(pintaTrazo);</span>
+<span class="nc" id="L72">        arrastraTrazo = new ArrastraTrazo(trazos, this);</span>
+<span class="nc" id="L73">        addMouseMotionListener(listener);</span>
+<span class="nc" id="L74">    }</span>
+
+    /**
+     * Si el modo es arrastre, borra el canvas entero. Si no, no lo hace.
+     * Luego llama a paint(g)
+     */
+    public void update(Graphics g)
+    {
+<span class="nc bnc" id="L82" title="All 2 branches missed.">        if (modoArrastrar)</span>
+<span class="nc" id="L83">            super.update(g);</span>
+<span class="nc" id="L84">        paint(g);</span>
+<span class="nc" id="L85">    }</span>
+
+    /**
+     * Dibuja los trazos en este componente
+     */
+    public void paint(Graphics g)
+    {
+<span class="nc bnc" id="L92" title="All 2 branches missed.">        for (int i = 0; i &lt; trazos.size(); i++)</span>
+        {
+<span class="nc" id="L94">            dibujaTrazo(trazos.get(i), g);</span>
+        }
+<span class="nc" id="L96">    }</span>
+
+    /**
+     * Dibuja un trazo en este componente.
+     * @param trazo Trazo a dibujar.
+     * @param g Graphics para dibujo.
+     */
+    private void dibujaTrazo(Trazo trazo, Graphics g)
+    {
+<span class="nc" id="L105">        g.setColor(trazo.getColor());</span>
+<span class="nc" id="L106">        Point2D p0 = trazo.getPunto(0);</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">        for (int i = 0; i &lt; trazo.getNumeroPuntos() - 1; i++)</span>
+        {
+<span class="nc" id="L109">            Point2D p1 = trazo.getPunto(i + 1);</span>
+<span class="nc" id="L110">            g.drawLine((int) p0.getX(), (int) p0.getY(), (int) p1.getX(),</span>
+<span class="nc" id="L111">                    (int) p1.getY());</span>
+<span class="nc" id="L112">            p0 = p1;</span>
+        }
+<span class="nc" id="L114">    }</span>
+
+    /**
+     * Cambia el color de dibujo del trazo.
+     * @param colorActual
+     */
+    public void setColorActual(Color colorActual)
+    {
+<span class="nc" id="L122">        pintaTrazo.setColorActual(colorActual);</span>
+<span class="nc" id="L123">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

@@ -16,7 +16,7 @@ public final class ManejadorDeLenguajes {
     }
 
     private ManejadorDeLenguajes() {
-
+        idiomaActual = new Espaniol();
     }
 
     public void setLenguajeActual(String idioma) {
@@ -33,10 +33,19 @@ public final class ManejadorDeLenguajes {
             case "italiano":
                 miManejador.idiomaActual = new Italiano();
                 break;
+            case "frances":
+                miManejador.idiomaActual = new Frances();
+                break;
+            case "aleman":
+                miManejador.idiomaActual = new Aleman();
+                break;
         }
     }
 
     public Idioma getIdiomaActual() {
+         if (miManejador == null) {
+            miManejador = new ManejadorDeLenguajes();
+        }
         return miManejador.idiomaActual;
     }
 }
