@@ -6,6 +6,8 @@
 
 package vuelouy.interfaz.common;
 
+import vuelouy.idiomas.ManejadorDeLenguajes;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
@@ -192,6 +194,7 @@ public class ComunicacionPaneles extends Observable implements ActionListener{
     public void cambio(String unCambio) {
         if(this.getBIdioma()){
             this.setIdioma(unCambio);
+            ManejadorDeLenguajes.getInstancia().setLenguajeActual(this.getIdioma());
         }else if (this.getBMensaje()) {
             this.setMensaje(unCambio);
             iniciarTimer();

@@ -5,11 +5,12 @@
  */
 package vuelouy.interfaz.common;
 
+import vuelouy.idiomas.ManejadorDeLenguajes;
+
 import java.util.Observable;
 import java.util.Observer;
 
 /**
- *
  * @author alumnoFI
  */
 public class MenuEntretenimiento extends javax.swing.JPanel implements Observer {
@@ -24,7 +25,6 @@ public class MenuEntretenimiento extends javax.swing.JPanel implements Observer 
     }
 
     /**
-     *
      * @param p
      */
     public MenuEntretenimiento(ComunicacionPaneles p) {
@@ -169,19 +169,19 @@ public class MenuEntretenimiento extends javax.swing.JPanel implements Observer 
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(86, 86, 86)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblLectura, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
-                                .addComponent(lblCamaraExterna, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblPintura, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(197, 197, 197)
+                                .addComponent(lblPintura, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblLectura, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
+                                .addComponent(lblCamaraExterna, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,24 +246,11 @@ public class MenuEntretenimiento extends javax.swing.JPanel implements Observer 
             comunicacion.getVentanaInicioP().mostrarSubMenu(comunicacion.getPanel());
             comunicacion.setBPanel(false);
         }
-        
-        
-        if(comunicacion.getIdioma().equals("español")){
-            lblMusica.setText("Música");
-            lblCamaraExterna.setText("Cámaras");
-            lblLectura.setText("Lectura");
-            lblPintura.setText("Pintura");
-            lblEntretenimiento.setText("Entretenimiento");
-       }
 
-        if(comunicacion.getIdioma().equals("ingles")){
-            lblEntretenimiento.setText("Entretenimiento");
-            lblMusica.setText("Music"); 
-            lblCamaraExterna.setText("Cameras");
-            lblLectura.setText("Reading");
-            lblPintura.setText("Painting");
-        }
-        
-        
+        lblMusica.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getMusica());
+        lblCamaraExterna.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getCamaraExterna());
+        lblLectura.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getLectura());
+        lblPintura.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getPintura());
+        lblEntretenimiento.setText(ManejadorDeLenguajes.getInstancia().getIdiomaActual().getEntretenimiento());
     }
 }
